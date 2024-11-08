@@ -26,7 +26,8 @@ python --version  # Doit afficher Python 3.x.x
 bash
 git clone https://github.com/Wissem95/hetic-sujet3.git
 
-cd weather-app
+cd hetic-sujet3
+cd weather_app
 
 2. Installer les dépendances:
 
