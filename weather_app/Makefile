@@ -9,12 +9,10 @@ install:
 	@echo "Installation terminée !"
 
 init-db:
-	@echo "Initialisation de la base de données..."
-	cd backend && flask db init
-	cd backend && flask db migrate -m "Initial migration"
+	@echo "Mise à jour de la base de données..."
 	cd backend && flask db upgrade
-	@echo "Base de données initialisée !"
+	@echo "Base de données mise à jour !"
 
 run:
 	@echo "Lancement du serveur..."
-	cd backend && python app.py
+	cd backend && python3 app.py
