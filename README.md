@@ -37,9 +37,6 @@ bash
 
 make install
 
--Initialiser la base de données
-
-make init-db
 
 -Lancer le serveur
 

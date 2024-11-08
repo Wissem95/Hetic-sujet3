@@ -8,10 +8,6 @@ install:
 	cd backend && pip install flask flask-sqlalchemy flask-cors flask-migrate psycopg2-binary python-dotenv
 	@echo "Installation terminée !"
 
-init-db:
-	@echo "Mise à jour de la base de données..."
-	cd backend && flask db upgrade
-	@echo "Base de données mise à jour !"
 
 run:
 	@echo "Lancement du serveur..."
