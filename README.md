@@ -1,155 +1,87 @@
-# Projet API Météo - HETIC
+# Application Météo
 
-## 📋 Description du Projet
+Application web de météo avec base de données pré-remplie pour 70 villes.
 
-Ce projet est une API météorologique développée dans le cadre du cours de développement backend à HETIC. L'application permet de gérer et visualiser les données météorologiques de différentes villes avec une interface utilisateur simple et intuitive.
+## Prérequis
 
-## 🎯 Objectifs du Projet
+1. Installer Homebrew (macOS):
 
-- Création d'une API RESTful avec Flask
-- Gestion d'une base de données PostgreSQL
-- Implémentation d'un frontend en JavaScript Vanilla
-- Gestion des performances et du Big Data
-- Documentation technique complète
+bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-## 🛠️ Technologies Utilisées
+2. Installer Python avec Homebrew:
 
-### Backend
-- Python 3.13
-- Flask (Framework Web)
-- PostgreSQL (Base de données)
-- SQLAlchemy (ORM)
-- Flask-Migrate (Migrations de base de données)
+bash
+brew install python
 
-### Frontend
-- HTML5
-- CSS3
-- JavaScript Vanilla
+3. Vérifier l'installation:
 
-## 🏗️ Architecture du Projet 
+bash
+python --version  # Doit afficher Python 3.x.x
 
+## Installation
+
+1. Cloner le projet:
+
+bash
+git clone https://github.com/Wissem95/hetic-sujet3.git
+cd weather-app
+
+2. Installer les dépendances:
+
+bash
+-Installer les dépendances
+
+make install
+
+-Initialiser la base de données
+
+make init-db
+
+-Lancer le serveur
+
+make run
+
+
+4. Ouvrir le frontend:
+Allez sur http://localhost:5000 ou http://127.0.0.1:5000
+
+## Structure
+```
 weather_app/
 ├── backend/
-│ ├── api/
-│ │ └── weather_service.py (Service météo)
-│ ├── models/
-│ │ └── weather.py (Modèles de données)
-│ ├── templates/ (Templates Flask)
-│ ├── static/
-│ │ └── swagger.yml (Documentation API)
-│ ├── app.py (Application principale)
-│ ├── config.py (Configuration)
-│ └── .env (Variables d'environnement)
+│   ├── migrations/     # Migrations DB
+│   ├── models/        # Modèles
+│   ├── api/          # Routes API
+│   ├── weather.db    # Base de données (pré-remplie)
+│   └── app.py       # Application Flask
 └── frontend/
-├── css/
-│ └── style.css (Styles)
-├── js/
-│ └── main.js (JavaScript)
-└── index.html (Page principale)
-
-## 🚀 Installation et Démarrage
-
-### Prérequis
-- Python 3.13+
-- PostgreSQL
-- pip
-
-### Installation
-
-1. Cloner le repository
-```
-bash
-git clone [URL_DU_REPO]
-cd weather_app
-``` 
-
-2. Configurer la base de données PostgreSQL
-```
-bash
-createdb weather_db
+    ├── css/
+    ├── js/
+    └── index.html
 ```
 
-3. Installer les dépendances Python
+## Fonctionnalités
+- Météo actuelle avec icônes
+- Historique des données
+- Statistiques et analyses
+- Auto-complétion des villes
+- Base de données déjà remplie avec:
+  - 10 villes tunisiennes
+  - 10 villes françaises
+  - 10 villes belges
+  - 10 villes italiennes
+  - 10 villes espagnoles
+  - 10 villes portugaises
+  - 10 villes anglaises
+
+## API
+- GET /api/weather/<city> : Météo actuelle
+- GET /api/weather/<city>/history : Historique
+- GET /api/weather/<city>/stats : Statistiques
+- POST /api/weather : Ajout de données
+
+## Base de données
+La base de données SQLite est déjà configurée et remplie avec toutes les données météo.
+Aucune configuration supplémentaire n'est nécessaire.
 ```
-bash
-cd backend
-pip3 install -r requirements.txt
-```
-
-4. Lancer l'application
-```
-bash
-# Terminal 1 - Backend
-cd backend
-python3 app.py
-
-# Ouvrir frontend/index.html dans un navigateur
-```
-
-## 📡 API Endpoints
-
-### Endpoints Principaux
-- `GET /api/health` - Vérification de l'état de l'API
-- `POST /api/weather` - Ajouter des données météo
-- `GET /api/weather/<city>` - Obtenir les données météo d'une ville
-- `GET /api/weather/<city>/history` - Obtenir l'historique météo
-- `GET /api/weather/<city>/stats` - Obtenir les statistiques météo
-
-### Exemple de Requête
-```bash
-curl -X POST http://127.0.0.1:5000/api/weather \
--H "Content-Type: application/json" \
--d '{
-  "city": "Paris",
-  "temperature": 20.5,
-  "humidity": 65,
-  "description": "Ensoleillé"
-}'
-```
-
-## 💾 Structure de la Base de Données
-
-### Table: weather_data
-- id (PK)
-- city
-- temperature
-- humidity
-- description
-- timestamp
-
-## 🔍 Fonctionnalités Principales
-
-### Backend
-- API RESTful complète
-- Gestion de base de données PostgreSQL
-- Validation des données
-- Gestion des erreurs
-- Documentation Swagger
-
-### Frontend
-- Interface utilisateur responsive
-- Affichage des données en temps réel
-- Formulaire d'ajout de données
-- Visualisation de l'historique
-- Statistiques par ville
-
-## 👥 Auteur
-
-- Wissem BALI
-- Formation : HETIC
-- Projet : Sujet 3 - API Météo
-
-## 📈 Améliorations Futures Possibles
-
-- Ajout d'authentification
-- Cache des données
-- Tests unitaires
-- Déploiement sur un serveur de production
-- Interface d'administration
-
-## 📄 Licence
-
-Ce projet est réalisé dans le cadre d'un cours à HETIC.
-```
-
-
