@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Météo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Ajout de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-cloud-sun"></i> Application Météo</h1>
+        
+        <!-- Section de recherche -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Entrez une ville...">
+                <button id="searchBtn"><i class="fas fa-search"></i> Rechercher</button>
+            </div>
+            <div id="suggestionsList" class="suggestions"></div>
+        </div>
+
+        <!-- Section des résultats -->
+        <div class="results-container">
+            <div id="weatherResult" class="result-section">
+                <!-- Les résultats météo actuels seront insérés ici -->
+            </div>
+
+            <div id="historyResult" class="result-section">
+                <h3><i class="fas fa-history"></i> Historique</h3>
+                <!-- L'historique météo sera inséré ici -->
+            </div>
+
+            <div id="statsResult" class="result-section">
+                <h3><i class="fas fa-chart-bar"></i> Statistiques</h3>
+                <!-- Les statistiques seront insérées ici -->
+            </div>
+        </div>
+
+        <!-- Section des analyses -->
+        <div class="analysis-container">
+            <div class="analysis-section">
+                <h2><i class="fas fa-chart-line"></i> Analyses</h2>
+                <div id="analyticsResult">
+                    <!-- Les analyses seront insérées ici -->
+                </div>
+            </div>
+
+            <div class="trends-section">
+                <h2><i class="fas fa-chart-trend-up"></i> Tendances</h2>
+                <div id="trendsResult">
+                    <!-- Les tendances seront insérées ici -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Section d'ajout de données -->
+        <div class="add-data-section">
+            <h2><i class="fas fa-plus-circle"></i> Ajouter des données météo</h2>
+            <div class="add-form">
+                <input type="text" id="addCity" placeholder="Ville">
+                <input type="number" id="addTemp" placeholder="Température">
+                <input type="number" id="addHumidity" placeholder="Humidité">
+                <input type="text" id="addDescription" placeholder="Description">
+                <button id="addBtn"><i class="fas fa-plus"></i> Ajouter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
