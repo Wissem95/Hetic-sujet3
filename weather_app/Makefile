@@ -1,9 +1,11 @@
 .PHONY: install init-db run
 
 install:
-	@echo "Installation des dépendances..."
-	cd backend && pip install flask flask-sqlalchemy flask-cors flask-migrate
-	cd backend && pip install -r requirements.txt
+	@echo "Installation de PostgreSQL..."
+	brew install postgresql@15
+	brew services start postgresql@15
+	@echo "Installation des dépendances Python..."
+	cd backend && pip install flask flask-sqlalchemy flask-cors flask-migrate psycopg2-binary python-dotenv
 	@echo "Installation terminée !"
 
 init-db:
